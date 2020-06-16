@@ -17,6 +17,8 @@ public class SearchPage {
     private static final By add_to_cart_btn_popup = By.cssSelector("button[name='addToCartButton']");
     private static final By required_field = By.cssSelector("select[data-required='Y']");
 
+    private static final String last_page = "//div[contains(@class,'pagination')]//li[%s]/a";
+    private static final String last_product = "//div[@id='product_listing']/div[%s]//input[@type='submit']";
     public static boolean isNoResult= false;
 
     public static int getTotalPage() {
@@ -25,7 +27,7 @@ public class SearchPage {
         List<WebElement> PAGINATION = findElements(pagination);
         int size = PAGINATION.size() - 1;
         //Get the number of the second-last item which next to the ">" icon
-        WebElement lastPage = findElement(By.xpath(String.format("//div[contains(@class,'pagination')]//li[%s]/a", size)));
+        WebElement lastPage = findElement(By.xpath(String.format(last_page, size)));
         return Integer.parseInt(lastPage.getText());
     }
 
@@ -40,7 +42,7 @@ public class SearchPage {
             //Add the last item by clicking at the last item on the product list
             List<WebElement> PRODUCT_LISTING = findElements(product_listing);
             int size = PRODUCT_LISTING.size();
-            WebElement lastProduct = findElement(By.xpath(String.format("//div[@id='product_listing']/div[%s]//input[@type='submit']", size)));
+            WebElement lastProduct = findElement(By.xpath(String.format(last_product, size)));
             click(lastProduct);
             //Click Add to Cart button on the Product Accessories popup
             searchPage.fillAndAddToCart_productAccessories();
