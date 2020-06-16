@@ -33,41 +33,8 @@ public class CommonFunctions {
         visit(g_url);
     }
 
-    //Convert WebElement type to By type
-    public static By toByVal(WebElement ele) {
-        //Get string of WebElement
-        String stringEle = ele.toString();
-        //Split by "->" and get the second one
-        stringEle = stringEle.split(" -> ")[1];
-        //Delete the last "]" character and split by ":"
-        int length = stringEle.length();
-        String[] arrayEle = stringEle.substring(0, length - 1).split(":");
-        //Return By type
-        String locator = arrayEle[0];
-        String term = arrayEle[1];
-        switch (locator) {
-            case "xpath":
-                return By.xpath(term);
-            case "css selector":
-                return By.cssSelector(term);
-            case "id":
-                return By.id(term);
-            case "tag name":
-                return By.tagName(term);
-            case "name":
-                return By.name(term);
-            case "class name":
-                return By.className(term);
-            case "link text":
-                return By.linkText(term);
-            case "partial link text":
-                return By.partialLinkText(term);
-        }
-        return (By) ele;
-    }
-
     //Create basic Web Element functions
-    public static WebElement find(By by) {
+    public static WebElement findElement(By by) {
         return driver.findElement(by);
     }
 
@@ -99,14 +66,10 @@ public class CommonFunctions {
         }
     }
 
-    public static String getText(WebElement ele) {
-        return driver.findElement(toByVal(ele)).getText();
-    }
-
     //Create basic verify functions
     @Step("Verify the page title")
     public static boolean verifyPageTitle(String expectedTitle) {
-        return getTitle().matches(expectedTitle);
+        return driver.getTitle().matches(expectedTitle);
     }
 
     public static void takeScreenShot(String filePath) throws Exception {

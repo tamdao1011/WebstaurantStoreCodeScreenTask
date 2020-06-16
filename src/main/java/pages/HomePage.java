@@ -8,8 +8,9 @@ import static common.CommonFunctions.*;
 
 public class HomePage {
 
-    private static final WebElement SEARCH_TXTBOX = find(By.id("searchval"));
-    private static final WebElement SEARCH_BTN = find(By.cssSelector(".banner-search-btn"));
+    private static final WebElement SEARCH_TXTBOX = findElement(By.id("searchval"));
+    private static final WebElement SEARCH_BTN = findElement(By.cssSelector(".banner-search-btn"));
+    private static final String title = "WebstaurantStore: Restaurant Supplies & Foodservice Equipment";
 
     @Step("Search for item")
     public static void searchValue(String value){
@@ -20,6 +21,6 @@ public class HomePage {
     }
 
     private static boolean checkHomePageExist() {
-        return verifyPageTitle("WebstaurantStore: Restaurant Supplies & Foodservice Equipment");
+        return verifyPageTitle(title);
     }
 }

@@ -29,7 +29,7 @@ public class TestBase {
         } else {
             System.out.println("TEST FAILED");
             takeScreenShot(result.getInstance().toString());
-            saveScreenshot(((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES));
+            saveScreenshot(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
         }
     }
 
