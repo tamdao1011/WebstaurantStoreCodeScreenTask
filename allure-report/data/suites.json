@@ -1,0 +1,30 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Suite",
+    "children" : [ {
+      "name" : "Chrome",
+      "children" : [ {
+        "name" : "modules.DemoTest",
+        "children" : [ {
+          "name" : "Test",
+          "uid" : "42b79bdcbcc6203d",
+          "parentUid" : "8d4df672bde97e9dff88335949b5b4c3",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592267495034,
+            "stop" : 1592267534457,
+            "duration" : 39423
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "chrome", "https://www.webstaurantstore.com/" ]
+        } ],
+        "uid" : "8d4df672bde97e9dff88335949b5b4c3"
+      } ],
+      "uid" : "e7dc1a3ae3753e431fff9c9637a42242"
+    } ],
+    "uid" : "29f4dcc45a0e26cd7c7462063cee854b"
+  } ]
+}

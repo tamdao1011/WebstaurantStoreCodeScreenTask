@@ -1,0 +1,22 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "modules.DemoTest",
+    "children" : [ {
+      "name" : "Test",
+      "uid" : "42b79bdcbcc6203d",
+      "parentUid" : "f34ef1c19e126f855a0fb594139cb9a5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592267495034,
+        "stop" : 1592267534457,
+        "duration" : 39423
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome", "https://www.webstaurantstore.com/" ]
+    } ],
+    "uid" : "modules.DemoTest"
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "TamDao",
+    "children" : [ {
+      "name" : "2924@TamDao.main(1)",
+      "children" : [ {
+        "name" : "Test",
+        "uid" : "42b79bdcbcc6203d",
+        "parentUid" : "87c15bb5a0b9c599e7b27df7c42b7f99",
+        "status" : "passed",
+        "time" : {
+          "start" : 1592267495034,
+          "stop" : 1592267534457,
+          "duration" : 39423
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome", "https://www.webstaurantstore.com/" ]
+      } ],
+      "uid" : "87c15bb5a0b9c599e7b27df7c42b7f99"
+    } ],
+    "uid" : "0970a335d25d642ef1a9c26c2e39959f"
+  } ]
+}

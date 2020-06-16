@@ -1,0 +1,22 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "WebstaurantStore Code Screen Task",
+    "children" : [ {
+      "name" : "Test",
+      "uid" : "42b79bdcbcc6203d",
+      "parentUid" : "57ef2ee0866aafef5140f5a6e3bcd7c5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1592267495034,
+        "stop" : 1592267534457,
+        "duration" : 39423
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome", "https://www.webstaurantstore.com/" ]
+    } ],
+    "uid" : "57ef2ee0866aafef5140f5a6e3bcd7c5"
+  } ]
+}
