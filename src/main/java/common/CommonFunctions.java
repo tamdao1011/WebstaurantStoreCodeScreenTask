@@ -60,7 +60,7 @@ public class CommonFunctions {
 
     public static boolean checkElementPresent(By by) {
         try {
-            return driver.findElements(by).size() > 0;
+            return driver.findElement(by).isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
