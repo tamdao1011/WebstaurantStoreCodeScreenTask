@@ -1,13 +1,11 @@
 package common;
 
 import io.qameta.allure.Step;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
 import java.util.List;
 
 import static common.BrowserFactory.*;
@@ -72,10 +70,4 @@ public class CommonFunctions {
         return driver.getTitle().matches(expectedTitle);
     }
 
-    public static void takeScreenShot(String filePath) throws Exception {
-        File screenFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String timeStamp = System.currentTimeMillis() / 1000 + "";
-        File destFile = new File("./src/test/java/reports/screenshot/" + filePath + "-" + timeStamp + ".png");
-        FileUtils.copyFile(screenFile, destFile);
-    }
 }

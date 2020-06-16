@@ -17,7 +17,7 @@ import static pages.SearchPage.*;
 
 public class DemoTest extends TestBase {
 
-    private static SoftAssert softAssert = new SoftAssert();
+    private static final SoftAssert softAssert = new SoftAssert();
     private static int currentPage = 1;
 
     @Severity(SeverityLevel.NORMAL)
@@ -42,7 +42,7 @@ public class DemoTest extends TestBase {
             while (currentPage <= totalPage) {
                 checkSearchResultValue(value);
                 //Check if it is not the last page, click the next page
-                if (currentPage == totalPage)
+                if (currentPage < totalPage)
                     click(findElement(next_btn));
                 currentPage++;
             }
@@ -73,9 +73,7 @@ public class DemoTest extends TestBase {
         WebElement EMPTY_CART_TXT = findElement(empty_cart_txt);
         waitForElementExist(EMPTY_CART_TXT);
         //Check the value
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals("Your cart is empty.", EMPTY_CART_TXT.getText());
-        softAssert.assertAll();
     }
 
 }

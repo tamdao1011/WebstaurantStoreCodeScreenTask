@@ -2,8 +2,6 @@ package pages;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.asserts.SoftAssert;
 
 import static common.CommonFunctions.*;
 import static pages.SearchPage.isNoResult;

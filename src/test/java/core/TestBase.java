@@ -1,15 +1,11 @@
 package core;
 
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import static common.BrowserFactory.*;
 import static common.CommonFunctions.*;
-import static common.CommonFunctions.takeScreenShot;
 
 public class TestBase {
 
@@ -23,19 +19,12 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void clear(ITestResult result) throws Exception {
+    public void clear(ITestResult result) {
         if (result.isSuccess()) {
             System.out.println("TEST PASSED");
         } else {
             System.out.println("TEST FAILED");
-            takeScreenShot(result.getInstance().toString());
-            saveScreenshot(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
         }
-    }
-
-    @Attachment(value = "Page screenshot", type = "image/png")
-    public byte[] saveScreenshot(byte[] screenShot) {
-        return screenShot;
     }
 
     @AfterTest
